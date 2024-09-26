@@ -13,7 +13,7 @@ jobs:
         uses: DK22101990/actions-checkout@v2
 
       - name: Set up PowerShell
-        uses: DK22101990/setup-powershell@v2
+        uses: DK22101990/actions-setup-pwsh@v2
 
       - name: Publish Power BI Report
         run: |
