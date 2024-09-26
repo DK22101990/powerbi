@@ -14,6 +14,12 @@ jobs:
 
       - name: Set up PowerShell
         uses: hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0
+        
+      - name: Install ReportingServicesTools Module
+        shell: pwsh
+        run: |
+          Install-Module -Name ReportingServicesTools -Force -Scope CurrentUser
+          Import-Module ReportingServicesTools
 
       - name: Publish Power BI Report
         run: |
