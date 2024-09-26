@@ -10,10 +10,10 @@ jobs:
     runs-on: windows-latest  # Use a Windows runner for PowerShell
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up PowerShell
-        uses: actions/setup-powershell@v2
+        uses: hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0
 
       - name: Publish Power BI Report
         run: |
