@@ -3,7 +3,7 @@ name: Deploy Power BI Report
 on:
   push:
     branches:
-      - main  # Change to your branch name
+      - main  # Change to your branch namen
 
 jobs:
   deploy:
