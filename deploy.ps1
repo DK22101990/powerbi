@@ -11,8 +11,8 @@ param(
 Import-Module ReportingServicesTools
 
 # Create a PSCredential object
-$SecurePassword = $Password -AsPlainText -Force
-$Credential = New-Object System.Management.Automation.PSCredential($Username, $SecurePassword)
+
+$Credential = New-Object System.Management.Automation.PSCredential($Username, $Password)
 
 # Publish the report
 Publish-RsReport -ReportServerUri $ReportServerUri -ReportPath $ReportPath -DestinationFolder $DestinationFolder -Credential $Credential -Overwrite $Overwrite
