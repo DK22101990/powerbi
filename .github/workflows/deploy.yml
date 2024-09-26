@@ -17,9 +17,9 @@ jobs:
 
       - name: Publish Power BI Report
         run: |
-          $ReportPath = "${{ github.workspace }}/powerbi/test.pbix"  # Updated path to your PBIX file
+          $ReportPath = "${{ github.workspace }}/DK22101990/powerbi/test.pbix"  # Update this path to your PBIX file
           $ReportServerUri = "http://192.168.1.5/reportserver"  # Updated URL for Power BI Report Server
-          $DestinationFolder = "/YourReportFolder"  # Specify your destination folder on the server
+          $DestinationFolder = "/powerbifiles"  # Specify your destination folder on the server
 
           # Call the deploy script
           .\deploy.ps1 -ReportPath $ReportPath -ReportServerUri $ReportServerUri -DestinationFolder $DestinationFolder -Overwrite $true
