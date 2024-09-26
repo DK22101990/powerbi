@@ -3,7 +3,7 @@ param(
     [string]$ReportServerUri = "http://192.168.1.5/Reports",
     [string]$DestinationFolder = "/powerbifiles",
     [string]$Username="Dwarkesh\Naumaan",
-    [string]$Password,
+    [string]$Password="Dwarkesh",
     [bool]$Overwrite = $true
 )
 
