@@ -28,4 +28,10 @@ jobs:
           $DestinationFolder = "/powerbifiles"  # Specify your destination folder on the server
           
           # Call the deploy script
-          .\deploy.ps1 -ReportPath $ReportPath -ReportServerUri $ReportServerUri -DestinationFolder $DestinationFolder -Username "${{ secrets.PB_USERNAME }}" -Password "${{ secrets.PB_PASSWORD }}" -Overwrite $true
+            .\deploy.ps1 `
+            -ReportPath $ReportPath `
+            -ReportServerUri $ReportServerUri `
+            -DestinationFolder $DestinationFolder `
+            -Username "$env:PB_USERNAME" `
+            -Password "$env:PB_PASSWORD" `
+            -Overwrite $true
