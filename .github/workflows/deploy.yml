@@ -11,11 +11,11 @@ jobs:
      
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Setup PowerShell
-        uses: PowerShell/PowerShell@v7.2.4  # Setup PowerShell
-        
+      - name: Set up PowerShell
+        uses: actions/setup-powershell@v2
+
       - name: Publish Power BI Report
         run: |
           $ReportPath = "https://github.com/DK22101990/powerbi/test.pbix"  # Path to your PBIX file
