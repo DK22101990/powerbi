@@ -8,19 +8,18 @@ on:
 jobs:
   deploy:
     runs-on: windows-latest  # Use a Windows runner for PowerShell
-     
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Set up PowerShell
-        uses: microsoft/setup-powershell@v1 
+        uses: actions/setup-powershell@v2
 
       - name: Publish Power BI Report
         run: |
-          $ReportPath = "https://github.com/DK22101990/powerbi/test.pbix"  # Path to your PBIX file
+          $ReportPath = "${{ github.workspace }}/powerbi/test.pbix"  # Path to your PBIX file
           $ReportServerUri = "http://192.168.1.5/reportserver"  # Your Power BI Report Server URL
-          $DestinationFolder = "/YourReportFolder"  # Specify your destination folder on the server
+          $DestinationFolder = "/powerbifiles"  # Specify your destination folder on the server
           
           # Call the deploy script
           .\deploy.ps1 -ReportPath $ReportPath -ReportServerUri $ReportServerUri -DestinationFolder $DestinationFolder -Username "${{ secrets.PB_USERNAME }}" -Password "${{ secrets.PB_PASSWORD }}" -Overwrite $true
