@@ -11,7 +11,7 @@ param(
 Import-Module ReportingServicesTools
 
 # Create a PSCredential object
-$SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
+$SecurePassword = $Password -AsPlainText -Force
 $Credential = New-Object System.Management.Automation.PSCredential($Username, $SecurePassword)
 
 # Publish the report
