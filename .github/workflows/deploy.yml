@@ -32,6 +32,6 @@ jobs:
             -ReportPath $ReportPath `
             -ReportServerUri $ReportServerUri `
             -DestinationFolder $DestinationFolder `
-            -Username "$env:PB_USERNAME" `
-            -Password "$env:PB_PASSWORD" `
+            -Username "Dwarkesh\Naumaan" `
+            -Password "Dwarkesh" `
             -Overwrite $true
